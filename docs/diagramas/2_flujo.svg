@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0d6efd"/>
+    </marker>
+    <marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#198754"/>
+    </marker>
+    <marker id="arO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#fd7e14"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <text x="60" y="80" font-size="46" font-weight="700" fill="#212529">Flujo de información</text>
+  <text x="60" y="122" font-size="23" fill="#6c757d">Del navegador al Arduino: qué viaja, cada cuánto y qué librería lo procesa</text>
+
+  <!-- ===================== COLUMNAS ===================== -->
+  <rect x="40" y="160" width="500" height="740" rx="20" fill="#e8f5ee" stroke="#198754" stroke-width="3"/>
+  <text x="290" y="205" font-size="28" font-weight="800" fill="#146c43" text-anchor="middle">NAVEGADOR (Chrome)</text>
+  <text x="290" y="235" font-size="19" fill="#146c43" text-anchor="middle">HTML + JavaScript · localhost:8080</text>
+
+  <rect x="740" y="160" width="500" height="740" rx="20" fill="#e7f1ff" stroke="#0d6efd" stroke-width="3"/>
+  <text x="990" y="205" font-size="28" font-weight="800" fill="#0a58ca" text-anchor="middle">SPRING BOOT (Java)</text>
+  <text x="990" y="235" font-size="19" fill="#0a58ca" text-anchor="middle">el "cerebro": decide y autoriza</text>
+
+  <rect x="1440" y="160" width="440" height="740" rx="20" fill="#fff4e6" stroke="#fd7e14" stroke-width="3"/>
+  <text x="1660" y="205" font-size="28" font-weight="800" fill="#ca6510" text-anchor="middle">ARDUINO UNO (C++)</text>
+  <text x="1660" y="235" font-size="19" fill="#ca6510" text-anchor="middle">obedece comandos de texto</text>
+
+  <!-- ===================== NAVEGADOR: cajas ===================== -->
+  <g font-size="21" fill="#212529">
+    <rect x="70" y="265" width="440" height="100" rx="12" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+    <text x="90" y="303" font-weight="700">Webcam</text>
+    <text x="90" y="335" fill="#6c757d">getUserMedia · selector de cámara</text>
+
+    <rect x="70" y="400" width="440" height="120" rx="12" fill="#ffffff" stroke="#198754" stroke-width="3"/>
+    <text x="90" y="438" font-weight="700">MediaPipe Hands</text>
+    <text x="90" y="468" fill="#6c757d">reconoce las manos: 21 puntos</text>
+    <rect x="90" y="482" width="280" height="28" rx="14" fill="#198754"/>
+    <text x="230" y="502" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">@mediapipe/tasks-vision</text>
+
+    <rect x="70" y="555" width="440" height="100" rx="12" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+    <text x="90" y="593" font-weight="700">Canvas</text>
+    <text x="90" y="625" fill="#6c757d">video + recuadros + esqueleto</text>
+
+    <rect x="70" y="690" width="440" height="100" rx="12" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+    <text x="90" y="728" font-weight="700">Dashboard</text>
+    <text x="90" y="760" fill="#6c757d">Bootstrap 5 · focos, acceso, historial</text>
+  </g>
+  <line x1="290" y1="365" x2="290" y2="396" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="290" y1="520" x2="290" y2="551" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+
+  <!-- ===================== SPRING: cajas ===================== -->
+  <g font-size="21" fill="#212529">
+    <rect x="770" y="265" width="440" height="100" rx="12" fill="#ffffff" stroke="#0d6efd" stroke-width="3"/>
+    <text x="790" y="303" font-weight="700">FaceService</text>
+    <text x="790" y="335" fill="#6c757d">detecta y reconoce rostros</text>
+    <rect x="1050" y="282" width="140" height="28" rx="14" fill="#0d6efd"/>
+    <text x="1120" y="302" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">OpenCV 4.9</text>
+
+    <rect x="770" y="400" width="440" height="100" rx="12" fill="#ffffff" stroke="#0d6efd" stroke-width="3"/>
+    <text x="790" y="438" font-weight="700">GestureClassifier</text>
+    <text x="790" y="470" fill="#6c757d">21 puntos → dedos → gesto</text>
+    <rect x="1050" y="417" width="140" height="28" rx="14" fill="#6c757d"/>
+    <text x="1120" y="437" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">código propio</text>
+
+    <rect x="770" y="535" width="440" height="120" rx="12" fill="#ffffff" stroke="#0d6efd" stroke-width="3"/>
+    <text x="790" y="573" font-weight="700">CommandService</text>
+    <text x="790" y="605" fill="#6c757d">¿gesto 0,7 s? ¿usuario autorizado?</text>
+    <text x="790" y="635" fill="#6c757d">enciende / apaga (toggle)</text>
+
+    <rect x="770" y="690" width="440" height="100" rx="12" fill="#ffffff" stroke="#0d6efd" stroke-width="3"/>
+    <text x="790" y="728" font-weight="700">ArduinoService</text>
+    <text x="790" y="760" fill="#6c757d">puerto serial USB</text>
+    <rect x="1050" y="707" width="140" height="28" rx="14" fill="#0d6efd"/>
+    <text x="1120" y="727" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">jSerialComm</text>
+  </g>
+  <polyline points="1210,315 1226,315 1226,595 1214,595" fill="none" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="990" y1="500" x2="990" y2="531" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="990" y1="655" x2="990" y2="686" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+
+  <!-- ===================== ARDUINO: cajas (de abajo hacia arriba) ===================== -->
+  <g font-size="21" fill="#212529">
+    <rect x="1470" y="690" width="380" height="100" rx="12" fill="#ffffff" stroke="#fd7e14" stroke-width="3"/>
+    <text x="1490" y="728" font-weight="700">loop()</text>
+    <text x="1490" y="760" fill="#6c757d">lee Serial hasta '\n'</text>
+
+    <rect x="1470" y="555" width="380" height="100" rx="12" fill="#ffffff" stroke="#fd7e14" stroke-width="3"/>
+    <text x="1490" y="593" font-weight="700">executeCommand(cmd)</text>
+    <text x="1490" y="625" fill="#6c757d">if (cmd == "RED_ON") ...</text>
+
+    <rect x="1470" y="400" width="380" height="120" rx="12" fill="#ffffff" stroke="#fd7e14" stroke-width="3"/>
+    <text x="1490" y="438" font-weight="700">digitalWrite(pin, HIGH/LOW)</text>
+    <text x="1490" y="470" fill="#6c757d">D4 rojo · D5 verde · D6 azul</text>
+    <text x="1490" y="500" fill="#6c757d">D7 relé → foco 220V</text>
+
+    <rect x="1470" y="265" width="380" height="100" rx="12" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+    <circle cx="1510" cy="315" r="16" fill="#dc3545"/><circle cx="1555" cy="315" r="16" fill="#198754"/><circle cx="1600" cy="315" r="16" fill="#0d6efd"/><circle cx="1645" cy="315" r="16" fill="#ffc107"/>
+    <text x="1680" y="323" font-weight="700">4 focos</text>
+  </g>
+  <line x1="1660" y1="690" x2="1660" y2="659" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="1660" y1="555" x2="1660" y2="524" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="1660" y1="400" x2="1660" y2="369" stroke="#495057" stroke-width="3" marker-end="url(#ar)"/>
+
+  <!-- ===================== FLECHAS ENTRE CAPAS ===================== -->
+  <g font-size="15" fill="#6c757d" text-anchor="middle">
+    <!-- 1 foto -->
+    <line x1="512" y1="305" x2="766" y2="305" stroke="#0d6efd" stroke-width="4" marker-end="url(#arB)"/>
+    <text x="640" y="290" font-size="17" font-weight="700" fill="#0a58ca">1 · foto JPEG · 250 ms</text>
+    <text x="640" y="327">POST /api/recognition</text>
+    <line x1="766" y1="348" x2="514" y2="348" stroke="#0d6efd" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arB)"/>
+    <text x="640" y="370">← nombre, %, recuadro</text>
+
+    <!-- 2 puntos de la mano -->
+    <line x1="512" y1="445" x2="766" y2="445" stroke="#198754" stroke-width="4" marker-end="url(#arG)"/>
+    <text x="640" y="430" font-size="17" font-weight="700" fill="#146c43">2 · 21 puntos · 120 ms</text>
+    <text x="640" y="467">POST /api/gesture</text>
+    <line x1="766" y1="490" x2="514" y2="490" stroke="#198754" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arG)"/>
+    <text x="640" y="512">← gesto, dedos, progreso</text>
+
+    <!-- 4 estado -->
+    <line x1="766" y1="745" x2="514" y2="745" stroke="#6c757d" stroke-width="4" marker-end="url(#ar)"/>
+    <text x="640" y="730" font-size="17" font-weight="700" fill="#495057">4 · estado · 700 ms</text>
+    <text x="640" y="767">GET /api/status</text>
+
+    <!-- 3 serial -->
+    <line x1="1212" y1="725" x2="1466" y2="725" stroke="#fd7e14" stroke-width="4" marker-end="url(#arO)"/>
+    <text x="1340" y="710" font-size="17" font-weight="700" fill="#ca6510">3 · "RED_ON\n"</text>
+    <line x1="1466" y1="768" x2="1214" y2="768" stroke="#fd7e14" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arO)"/>
+    <text x="1340" y="790">← "OK:RED_ON"</text>
+    <text x="1340" y="810">o "READY"</text>
+    <text x="1340" y="850" font-size="16" font-weight="700" fill="#ca6510">USB serial</text>
+    <text x="1340" y="870" font-size="16" font-weight="700" fill="#ca6510">9600 baudios</text>
+  </g>
+
+  <!-- ===================== EJEMPLO ===================== -->
+  <rect x="40" y="935" width="1840" height="110" rx="16" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="70" y="975" font-size="22" font-weight="700" fill="#212529">Ejemplo: encender el foco rojo</text>
+  <g font-size="21" fill="#212529">
+    <text x="70" y="1020">Cámara ve ✌️ → MediaPipe: 21 puntos → GestureClassifier: TWO_FINGERS → CommandService: Gabriel autorizado, 0,7 s → ArduinoService: "RED_ON" → Arduino: digitalWrite(4, HIGH) → 🔴</text>
+  </g>
+</svg>

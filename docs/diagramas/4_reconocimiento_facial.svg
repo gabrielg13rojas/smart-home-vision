@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0d6efd"/></marker></defs>
+<rect width="1920" height="1080" fill="#ffffff"/>
+<text x="60" y="80" font-size="46" font-weight="700" fill="#212529">¿Cómo reconoce una cara?</text>
+<text x="60" y="122" font-size="23" fill="#6c757d">De una foto a 128 números · OpenCV con los modelos YuNet y SFace (preentrenados)</text>
+<rect x="50" y="160" width="330" height="420" rx="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+<rect x="70" y="180" width="290" height="220" rx="12" fill="#e9ecef"/>
+<g transform="rotate(0 215.0 290.0)"><ellipse cx="215.0" cy="290.0" rx="56.0" ry="70" fill="#f1c27d" stroke="#a0754a" stroke-width="2"/><path d="M159.0 272.5 q56.0 -87.5 112.0 0" fill="#5c3d2e"/><circle cx="192.6" cy="283.0" r="5.6000000000000005" fill="#212529"/><circle cx="237.4" cy="283.0" r="5.6000000000000005" fill="#212529"/><path d="M215.0 288.6 l-5.6000000000000005 17.5 h11.200000000000001" fill="none" stroke="#a0754a" stroke-width="2"/><path d="M194.0 321.5 q21.0 14.0 42.0 0" fill="none" stroke="#c0392b" stroke-width="3"/></g>
+<line x1="70" y1="180" x2="70" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="88" y1="180" x2="88" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="106" y1="180" x2="106" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="124" y1="180" x2="124" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="142" y1="180" x2="142" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="160" y1="180" x2="160" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="178" y1="180" x2="178" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="196" y1="180" x2="196" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="214" y1="180" x2="214" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="232" y1="180" x2="232" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="250" y1="180" x2="250" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="268" y1="180" x2="268" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="286" y1="180" x2="286" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="304" y1="180" x2="304" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="322" y1="180" x2="322" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="340" y1="180" x2="340" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="358" y1="180" x2="358" y2="400" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="180" x2="360" y2="180" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="198" x2="360" y2="198" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="216" x2="360" y2="216" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="234" x2="360" y2="234" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="252" x2="360" y2="252" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="270" x2="360" y2="270" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="288" x2="360" y2="288" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="306" x2="360" y2="306" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="324" x2="360" y2="324" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="342" x2="360" y2="342" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="360" x2="360" y2="360" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="378" x2="360" y2="378" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="70" y1="396" x2="360" y2="396" stroke="#ffffff" stroke-opacity="0.5"/>
+<text x="72" y="450" font-size="26" font-weight="800" fill="#212529">1 · Foto</text>
+<text x="72" y="490" font-size="20" fill="#495057">JPEG 640×480 → matriz de</text>
+<text x="72" y="518" font-size="20" fill="#495057">píxeles (Mat, azul-verde-rojo)</text>
+<text x="72" y="546" font-size="20" fill="#495057">≈ 920.000 números</text>
+<line x1="384" y1="290" x2="422" y2="290" stroke="#0d6efd" stroke-width="5" marker-end="url(#ar)"/>
+<rect x="427" y="160" width="330" height="420" rx="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+<rect x="447" y="180" width="290" height="220" rx="12" fill="#e9ecef"/>
+<g transform="rotate(0 592.0 290.0)"><ellipse cx="592.0" cy="290.0" rx="56.0" ry="70" fill="#f1c27d" stroke="#a0754a" stroke-width="2"/><path d="M536.0 272.5 q56.0 -87.5 112.0 0" fill="#5c3d2e"/><circle cx="569.6" cy="283.0" r="5.6000000000000005" fill="#212529"/><circle cx="614.4" cy="283.0" r="5.6000000000000005" fill="#212529"/><path d="M592.0 288.6 l-5.6000000000000005 17.5 h11.200000000000001" fill="none" stroke="#a0754a" stroke-width="2"/><path d="M571.0 321.5 q21.0 14.0 42.0 0" fill="none" stroke="#c0392b" stroke-width="3"/></g>
+<rect x="526.0" y="208.0" width="132" height="164" fill="none" stroke="#198754" stroke-width="5"/>
+<circle cx="570.0" cy="283.0" r="6" fill="#0d6efd" stroke="#fff" stroke-width="2"/>
+<circle cx="614.0" cy="283.0" r="6" fill="#0d6efd" stroke="#fff" stroke-width="2"/>
+<circle cx="592.0" cy="302.0" r="6" fill="#0d6efd" stroke="#fff" stroke-width="2"/>
+<circle cx="574.0" cy="322.0" r="6" fill="#0d6efd" stroke="#fff" stroke-width="2"/>
+<circle cx="610.0" cy="322.0" r="6" fill="#0d6efd" stroke="#fff" stroke-width="2"/>
+<rect x="526.0" y="180.0" width="70" height="26" rx="5" fill="#198754"/><text x="561.0" y="199.0" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">0,98</text>
+<text x="449" y="450" font-size="26" font-weight="800" fill="#212529">2 · YuNet detecta</text>
+<text x="449" y="490" font-size="20" fill="#495057">recuadro de la cara +</text>
+<text x="449" y="518" font-size="20" fill="#495057">5 puntos (ojos, nariz, boca)</text>
+<text x="449" y="546" font-size="20" fill="#495057">+ confianza (0,98)</text>
+<line x1="761" y1="290" x2="799" y2="290" stroke="#0d6efd" stroke-width="5" marker-end="url(#ar)"/>
+<rect x="804" y="160" width="330" height="420" rx="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+<rect x="824" y="180" width="290" height="220" rx="12" fill="#e9ecef"/>
+<g transform="rotate(-22 899.0 290.0)"><ellipse cx="899.0" cy="290.0" rx="33.6" ry="42" fill="#f1c27d" stroke="#a0754a" stroke-width="2"/><path d="M865.4 279.5 q33.6 -52.5 67.2 0" fill="#5c3d2e"/><circle cx="885.56" cy="285.8" r="3.36" fill="#212529"/><circle cx="912.44" cy="285.8" r="3.36" fill="#212529"/><path d="M899.0 289.16 l-3.36 10.5 h6.72" fill="none" stroke="#a0754a" stroke-width="2"/><path d="M886.4 308.9 q12.6 8.4 25.2 0" fill="none" stroke="#c0392b" stroke-width="3"/></g>
+<line x1="949.0" y1="290.0" x2="987.0" y2="290.0" stroke="#0d6efd" stroke-width="4" marker-end="url(#ar)"/>
+<rect x="994.0" y="235.0" width="110" height="110" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+<g transform="rotate(0 1049.0 292.0)"><ellipse cx="1049.0" cy="292.0" rx="36.800000000000004" ry="46" fill="#f1c27d" stroke="#a0754a" stroke-width="2"/><path d="M1012.2 280.5 q36.800000000000004 -57.5 73.60000000000001 0" fill="#5c3d2e"/><circle cx="1034.28" cy="287.4" r="3.68" fill="#212529"/><circle cx="1063.72" cy="287.4" r="3.68" fill="#212529"/><path d="M1049.0 291.08 l-3.68 11.5 h7.36" fill="none" stroke="#a0754a" stroke-width="2"/><path d="M1035.2 312.7 q13.799999999999999 9.200000000000001 27.599999999999998 0" fill="none" stroke="#c0392b" stroke-width="3"/></g>
+<text x="1049.0" y="370.0" font-size="16" fill="#495057" text-anchor="middle">112 × 112</text>
+<text x="826" y="450" font-size="26" font-weight="800" fill="#212529">3 · Alinear</text>
+<text x="826" y="490" font-size="20" fill="#495057">gira y recorta a 112×112 px:</text>
+<text x="826" y="518" font-size="20" fill="#495057">los ojos siempre quedan</text>
+<text x="826" y="546" font-size="20" fill="#495057">en el mismo lugar</text>
+<line x1="1138" y1="290" x2="1176" y2="290" stroke="#0d6efd" stroke-width="5" marker-end="url(#ar)"/>
+<rect x="1181" y="160" width="330" height="420" rx="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+<rect x="1201" y="180" width="290" height="220" rx="12" fill="#e9ecef"/>
+<circle cx="1231" cy="202.0" r="12" fill="#6f42c1" fill-opacity="0.45"/>
+<circle cx="1231" cy="246.0" r="12" fill="#6f42c1" fill-opacity="0.45"/>
+<circle cx="1231" cy="290.0" r="12" fill="#6f42c1" fill-opacity="0.45"/>
+<circle cx="1231" cy="334.0" r="12" fill="#6f42c1" fill-opacity="0.45"/>
+<circle cx="1231" cy="378.0" r="12" fill="#6f42c1" fill-opacity="0.45"/>
+<circle cx="1281" cy="224.0" r="12" fill="#6f42c1" fill-opacity="0.6"/>
+<circle cx="1281" cy="268.0" r="12" fill="#6f42c1" fill-opacity="0.6"/>
+<circle cx="1281" cy="312.0" r="12" fill="#6f42c1" fill-opacity="0.6"/>
+<circle cx="1281" cy="356.0" r="12" fill="#6f42c1" fill-opacity="0.6"/>
+<circle cx="1331" cy="246.0" r="12" fill="#6f42c1" fill-opacity="0.75"/>
+<circle cx="1331" cy="290.0" r="12" fill="#6f42c1" fill-opacity="0.75"/>
+<circle cx="1331" cy="334.0" r="12" fill="#6f42c1" fill-opacity="0.75"/>
+<circle cx="1381" cy="268.0" r="12" fill="#6f42c1" fill-opacity="0.8999999999999999"/>
+<circle cx="1381" cy="312.0" r="12" fill="#6f42c1" fill-opacity="0.8999999999999999"/>
+<rect x="1421" y="228.0" width="6" height="9.0" fill="#dc3545"/>
+<rect x="1430" y="217.0" width="6" height="20.0" fill="#dc3545"/>
+<rect x="1439" y="232.5" width="6" height="4.5" fill="#dc3545"/>
+<rect x="1448" y="221.0" width="6" height="16.0" fill="#0d6efd"/>
+<rect x="1457" y="210.5" width="6" height="26.5" fill="#dc3545"/>
+<rect x="1466" y="212.0" width="6" height="25.0" fill="#dc3545"/>
+<rect x="1475" y="210.0" width="6" height="27.0" fill="#0d6efd"/>
+<rect x="1421" y="348.5" width="6" height="8.5" fill="#0d6efd"/>
+<rect x="1430" y="333.5" width="6" height="23.5" fill="#dc3545"/>
+<rect x="1439" y="350.5" width="6" height="6.5" fill="#dc3545"/>
+<rect x="1448" y="345.5" width="6" height="11.5" fill="#0d6efd"/>
+<rect x="1457" y="331.0" width="6" height="26.0" fill="#dc3545"/>
+<rect x="1466" y="350.5" width="6" height="6.5" fill="#0d6efd"/>
+<rect x="1475" y="341.0" width="6" height="16.0" fill="#dc3545"/>
+<text x="1449" y="302.0" font-size="22" font-weight="800" fill="#212529" text-anchor="middle">128</text>
+<text x="1203" y="450" font-size="26" font-weight="800" fill="#212529">4 · SFace resume</text>
+<text x="1203" y="490" font-size="20" fill="#495057">una red neuronal convierte</text>
+<text x="1203" y="518" font-size="20" fill="#495057">la cara en 128 números</text>
+<text x="1203" y="546" font-size="20" fill="#495057">(el embedding)</text>
+<line x1="1515" y1="290" x2="1553" y2="290" stroke="#0d6efd" stroke-width="5" marker-end="url(#ar)"/>
+<rect x="1558" y="160" width="330" height="420" rx="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+<rect x="1578" y="180" width="290" height="220" rx="12" fill="#e9ecef"/>
+<text x="1723.0" y="230.0" font-size="17" font-family="Consolas, monospace" fill="#212529" text-anchor="middle">[0.04, -0.13, 0.08 …]</text>
+<text x="1723.0" y="268.0" font-size="18" fill="#495057" text-anchor="middle">vs. users.json</text>
+<rect x="1598" y="290.0" width="250" height="44" rx="10" fill="#198754"/>
+<text x="1723.0" y="320.0" font-size="21" font-weight="800" fill="#fff" text-anchor="middle">✓ Gabriel · 0,61</text>
+<rect x="1598" y="346.0" width="250" height="40" rx="10" fill="#dc3545"/>
+<text x="1723.0" y="373.0" font-size="19" font-weight="800" fill="#fff" text-anchor="middle">Desconocido · 0,12</text>
+<text x="1580" y="450" font-size="26" font-weight="800" fill="#212529">5 · Comparar</text>
+<text x="1580" y="490" font-size="20" fill="#495057">similitud coseno con los</text>
+<text x="1580" y="518" font-size="20" fill="#495057">usuarios de users.json</text>
+<text x="1580" y="546" font-size="20" fill="#495057">≥ 0,363 → reconocido</text>
+<rect x="50" y="620" width="900" height="420" rx="18" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+<text x="78" y="668" font-size="26" font-weight="800" fill="#212529">El "mapa de caras"</text>
+<text x="78" y="700" font-size="19" fill="#6c757d">(dibujado en 2D; en realidad tiene 128 dimensiones)</text>
+<circle cx="351.6688578834214" cy="891.8073425784971" r="9" fill="#198754" fill-opacity="0.8"/>
+<circle cx="333.7867673307554" cy="887.3159364253883" r="9" fill="#198754" fill-opacity="0.8"/>
+<circle cx="345.04066151825714" cy="865.0154767171995" r="9" fill="#198754" fill-opacity="0.8"/>
+<circle cx="380.85573721535854" cy="872.5574471136068" r="9" fill="#198754" fill-opacity="0.8"/>
+<circle cx="349.28972202634736" cy="882.2436748346561" r="9" fill="#198754" fill-opacity="0.8"/>
+<circle cx="369.5690417925017" cy="869.4022590286668" r="9" fill="#198754" fill-opacity="0.8"/>
+<text x="350" y="820" font-size="21" font-weight="700" fill="#198754" text-anchor="middle">Gabriel</text>
+<circle cx="700.1728833524305" cy="803.0517040492355" r="9" fill="#0d6efd" fill-opacity="0.8"/>
+<circle cx="683.778083438385" cy="812.5986875519953" r="9" fill="#0d6efd" fill-opacity="0.8"/>
+<circle cx="668.8286618238724" cy="796.1256510718077" r="9" fill="#0d6efd" fill-opacity="0.8"/>
+<circle cx="662.3107169881578" cy="815.9853670434079" r="9" fill="#0d6efd" fill-opacity="0.8"/>
+<circle cx="686.676232363775" cy="813.856512500705" r="9" fill="#0d6efd" fill-opacity="0.8"/>
+<circle cx="691.1493410825069" cy="796.7042481820048" r="9" fill="#0d6efd" fill-opacity="0.8"/>
+<text x="690" y="770" font-size="21" font-weight="700" fill="#0d6efd" text-anchor="middle">Ana</text>
+<circle cx="628.1181653853395" cy="965.6565504282619" r="9" fill="#6f42c1" fill-opacity="0.8"/>
+<circle cx="643.0064232163619" cy="945.2636267316317" r="9" fill="#6f42c1" fill-opacity="0.8"/>
+<circle cx="623.651955484235" cy="928.3878809438512" r="9" fill="#6f42c1" fill-opacity="0.8"/>
+<circle cx="622.4270350712317" cy="927.31169846716" r="9" fill="#6f42c1" fill-opacity="0.8"/>
+<circle cx="606.4583503597474" cy="978.3169476481177" r="9" fill="#6f42c1" fill-opacity="0.8"/>
+<circle cx="598.0510216584341" cy="971.639570544011" r="9" fill="#6f42c1" fill-opacity="0.8"/>
+<text x="630" y="910" font-size="21" font-weight="700" fill="#6f42c1" text-anchor="middle">Luis</text>
+<polygon points="395,896 400,907 411,908 403,916 405,928 395,921 385,928 387,916 379,908 390,907" fill="#ffc107" stroke="#212529" stroke-width="1.5"/>
+<text x="110" y="1010" font-size="19" fill="#212529">★ foto nueva: cae cerca de Gabriel → reconocido</text>
+<circle cx="870" cy="920" r="10" fill="#dc3545"/><text x="870" y="900" font-size="18" font-weight="700" fill="#dc3545" text-anchor="middle">desconocido</text>
+<rect x="990" y="620" width="880" height="420" rx="18" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2"/>
+<text x="1020" y="670" font-size="26" font-weight="800" fill="#0a58ca">Para recordar</text>
+<circle cx="1032" cy="713" r="7" fill="#0d6efd"/>
+<text x="1052" y="720" font-size="21" font-weight="700" fill="#212529">No entrenamos nada.</text>
+<text x="1052" y="747" font-size="18" fill="#495057">YuNet y SFace ya vienen entrenados con muchísimas caras.</text>
+<circle cx="1032" cy="775" r="7" fill="#0d6efd"/>
+<text x="1052" y="782" font-size="21" font-weight="700" fill="#212529">Registrarse = guardar números.</text>
+<text x="1052" y="809" font-size="18" fill="#495057">5 vectores de 128 números en users.json; las fotos se descartan.</text>
+<circle cx="1032" cy="837" r="7" fill="#0d6efd"/>
+<text x="1052" y="844" font-size="21" font-weight="700" fill="#212529">Ningún número es "la nariz".</text>
+<text x="1052" y="871" font-size="18" fill="#495057">La red aprendió sola a poner cerca las fotos de la misma persona.</text>
+<circle cx="1032" cy="899" r="7" fill="#0d6efd"/>
+<text x="1052" y="906" font-size="21" font-weight="700" fill="#212529">El % en pantalla es un indicador.</text>
+<text x="1052" y="933" font-size="18" fill="#495057">Umbral 0,363 = 60 %; similitud 0,7 = 100 %. No es una métrica biométrica.</text>
+<circle cx="1032" cy="961" r="7" fill="#0d6efd"/>
+<text x="1052" y="968" font-size="21" font-weight="700" fill="#212529">Sigue siendo un dato biométrico.</text>
+<text x="1052" y="995" font-size="18" fill="#495057">No es una foto, pero te identifica: protégelo y permite borrarlo.</text>
+</svg>

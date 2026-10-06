@@ -1,0 +1,9 @@
+target/
+*.class
+.idea/
+*.iml
+.vscode/
+
+# Datos locales: embeddings faciales y modelos descargados
+data/users.json
+data/models/

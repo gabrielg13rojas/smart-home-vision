@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Home Vision</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+<!-- ============================== BARRA SUPERIOR ============================== -->
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+    <div class="container-fluid gap-3">
+        <span class="navbar-brand d-flex align-items-center gap-2 fw-semibold me-0">
+            <span class="bg-primary text-white rounded-3 px-2 py-1"><i class="bi bi-house-gear-fill"></i></span>
+            Smart Home Vision
+        </span>
+
+        <div class="d-none d-lg-flex align-items-center gap-1 small">
+            <span id="stepFace" class="badge rounded-pill fw-normal text-bg-light border"><i class="bi bi-person-bounding-box"></i> Rostro</span>
+            <i class="bi bi-chevron-right text-secondary"></i>
+            <span id="stepAuth" class="badge rounded-pill fw-normal text-bg-light border"><i class="bi bi-shield-lock"></i> Autorización</span>
+            <i class="bi bi-chevron-right text-secondary"></i>
+            <span id="stepHand" class="badge rounded-pill fw-normal text-bg-light border"><i class="bi bi-hand-index-thumb"></i> Gesto</span>
+            <i class="bi bi-chevron-right text-secondary"></i>
+            <span id="stepSpring" class="badge rounded-pill fw-normal text-bg-light border"><i class="bi bi-cpu"></i> Spring Boot</span>
+            <i class="bi bi-chevron-right text-secondary"></i>
+            <span id="stepArduino" class="badge rounded-pill fw-normal text-bg-light border"><i class="bi bi-usb-symbol"></i> Arduino</span>
+        </div>
+
+        <span id="arduinoBadge" class="badge rounded-pill text-bg-warning">
+            <i class="bi bi-usb-plug"></i> Arduino: modo simulado
+        </span>
+    </div>
+</nav>
+
+<main class="container-fluid py-4">
+    <div class="row g-4">
+
+        <!-- ======================= COLUMNA IZQUIERDA ======================= -->
+        <div class="col-xl-8 d-flex flex-column gap-4">
+
+            <!-- Cámara -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white d-flex flex-wrap align-items-center gap-3 py-3">
+                    <h2 class="h6 fw-semibold mb-0 me-auto"><i class="bi bi-camera-video text-primary me-2"></i>Cámara en vivo</h2>
+                    <div class="input-group input-group-sm w-auto">
+                        <label class="input-group-text" for="cameraSelect"><i class="bi bi-webcam"></i></label>
+                        <select id="cameraSelect" class="form-select" style="max-width: 240px" title="Elegir cámara">
+                            <option value="">Cámara predeterminada</option>
+                        </select>
+                    </div>
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" role="switch" id="toggleFaces" checked>
+                        <label class="form-check-label small" for="toggleFaces">Rostros <span class="text-secondary">(OpenCV)</span></label>
+                    </div>
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" role="switch" id="toggleHands" checked>
+                        <label class="form-check-label small" for="toggleHands">Manos <span class="text-secondary">(MediaPipe)</span></label>
+                    </div>
+                    <select id="handEngine" class="form-select form-select-sm w-auto" title="Motor de detección de manos">
+                        <option value="CPU">Manos: CPU (compatible)</option>
+                        <option value="GPU">Manos: GPU (rápido)</option>
+                    </select>
+                    <span id="fps" class="badge text-bg-light border">0 fps</span>
+                </div>
+                <div class="card-body p-0">
+                    <div class="video-wrap position-relative bg-dark">
+                        <video id="video" playsinline muted></video>
+                        <canvas id="canvas" width="640" height="480"></canvas>
+
+                        <div id="placeholder" class="position-absolute top-0 start-0 w-100 h-100 bg-light d-flex flex-column align-items-center justify-content-center gap-3">
+                            <i class="bi bi-camera-video-off display-4 text-secondary"></i>
+                            <p class="text-secondary mb-0">La cámara está apagada</p>
+                            <button id="startBtn" class="btn btn-primary btn-lg">
+                                <i class="bi bi-camera-video me-2"></i>Encender cámara
+                            </button>
+                        </div>
+
+                        <div id="banner" class="overlay-banner alert alert-success shadow text-center d-none">
+                            <div id="bannerTitle" class="fs-3 fw-bold"></div>
+                            <div id="bannerSubtitle" class="fw-semibold"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-white small text-secondary" id="handsMsg">
+                    <i class="bi bi-info-circle me-1"></i>Pulsa <b>Encender cámara</b> y permite el acceso a la webcam.
+                </div>
+            </div>
+
+            <!-- Iluminación: 4 focos -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white d-flex align-items-center py-3">
+                    <h2 class="h6 fw-semibold mb-0 me-auto"><i class="bi bi-lightbulb text-warning me-2"></i>Iluminación</h2>
+                    <span class="small text-secondary">Gesto o clic para encender / apagar</span>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3" id="bulbs"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================= COLUMNA DERECHA ======================= -->
+        <div class="col-xl-4 d-flex flex-column gap-4">
+
+            <!-- Control de acceso -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white py-3"><h2 class="h6 fw-semibold mb-0"><i class="bi bi-shield-lock text-primary me-2"></i>Control de acceso</h2></div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <div id="avatar" class="avatar rounded-circle d-flex align-items-center justify-content-center fs-3 fw-bold border border-3 bg-light text-secondary">
+                            <i class="bi bi-person"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="small text-secondary">Usuario frente a la cámara</div>
+                            <div id="userName" class="fs-4 fw-semibold">Nadie</div>
+                        </div>
+                    </div>
+                    <div id="authAlert" class="alert alert-secondary d-flex align-items-center gap-2 mt-3 mb-0 py-2">
+                        <i class="bi bi-hourglass-split fs-4"></i>
+                        <div><b>Esperando rostro</b><div class="small">Gestos deshabilitados</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manos detectadas -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white d-flex align-items-center py-3">
+                    <h2 class="h6 fw-semibold mb-0 me-auto"><i class="bi bi-hand-index-thumb text-primary me-2"></i>Manos detectadas</h2>
+                    <span id="handCount" class="badge rounded-pill text-bg-secondary">0</span>
+                </div>
+                <div class="card-body">
+                    <div id="handsList"></div>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small text-secondary">Último comando</span>
+                        <span id="commandValue" class="fw-semibold">—</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historial -->
+            <div class="card border-0 shadow-sm flex-grow-1">
+                <div class="card-header bg-white py-3"><h2 class="h6 fw-semibold mb-0"><i class="bi bi-clock-history text-primary me-2"></i>Historial</h2></div>
+                <div class="card-body p-0 overflow-auto" style="max-height: 320px">
+                    <table class="table table-sm table-hover mb-0 align-middle">
+                        <thead class="table-light"><tr><th class="ps-3">Hora</th><th>Usuario</th><th></th><th>Comando</th><th class="pe-3">Estado</th></tr></thead>
+                        <tbody id="historyBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= FILA INFERIOR ======================= -->
+    <div class="row g-4 mt-0">
+
+        <!-- Usuarios -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white py-3"><h2 class="h6 fw-semibold mb-0"><i class="bi bi-person-plus text-primary me-2"></i>Registrar usuario</h2></div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input id="nameInput" type="text" class="form-control" placeholder="Nombre, ej. Gabriel" maxlength="30">
+                        <button id="registerBtn" class="btn btn-primary"><i class="bi bi-camera me-1"></i>Registrar</button>
+                    </div>
+                    <div id="registerMsg" class="form-text">Una sola persona frente a la cámara, con buena luz. Se toman 5 capturas.</div>
+                    <h3 class="h6 mt-3 text-secondary">Usuarios registrados</h3>
+                    <ul id="userList" class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guía de gestos -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white py-3"><h2 class="h6 fw-semibold mb-0"><i class="bi bi-hand-thumbs-up text-primary me-2"></i>Guía de gestos</h2></div>
+                <div class="card-body p-0">
+                    <table class="table table-sm table-striped mb-0 align-middle">
+                        <tbody id="gestureGuide"></tbody>
+                    </table>
+                </div>
+                <div class="card-footer bg-white small text-secondary">
+                    Mantén el gesto hasta llenar la barra (~1 s). Para repetirlo, baja la mano y vuelve a hacerlo.
+                </div>
+            </div>
+        </div>
+
+        <!-- Arduino -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white py-3"><h2 class="h6 fw-semibold mb-0"><i class="bi bi-usb-symbol text-primary me-2"></i>Arduino</h2></div>
+                <div class="card-body">
+                    <label class="form-label small" for="portSelect">Puerto serial</label>
+                    <div class="input-group mb-2">
+                        <select id="portSelect" class="form-select"><option value="">Sin puerto (modo simulado)</option></select>
+                        <button id="refreshPortsBtn" class="btn btn-outline-secondary" title="Actualizar lista"><i class="bi bi-arrow-clockwise"></i></button>
+                        <button id="connectBtn" class="btn btn-primary">Conectar</button>
+                    </div>
+                    <div id="arduinoMsg" class="form-text mb-3"></div>
+                    <div class="small text-secondary mb-2">Prueba manual (sin reconocimiento facial):</div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-sm btn-outline-secondary" data-cmd="LIGHTS_ON"><i class="bi bi-lightbulb-fill text-warning"></i> Todos ON</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-cmd="ALL_OFF"><i class="bi bi-power"></i> Todo OFF</button>
+                        <button class="btn btn-sm btn-outline-secondary" data-cmd="HOME_MODE"><i class="bi bi-house-heart"></i> Modo casa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

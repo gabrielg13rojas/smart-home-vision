@@ -1,0 +1,1 @@
+Carpeta de datos locales: users.json (embeddings faciales) y models/ (modelos ONNX de OpenCV, se descargan solos).

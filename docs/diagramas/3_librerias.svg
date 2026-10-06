@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1920" height="1080" fill="#ffffff"/>
+<text x="60" y="80" font-size="46" font-weight="700" fill="#212529">¿Qué procesa cada librería?</text>
+<text x="60" y="122" font-size="23" fill="#6c757d">No se entrenó nada: los modelos vienen preentrenados y los gestos son reglas escritas a mano</text>
+<rect x="60" y="160" width="580" height="255" rx="16" fill="#ffffff" stroke="#198754" stroke-width="4"/>
+<path d="M60 176 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#198754"/>
+<text x="82" y="194" font-size="19" font-weight="700" fill="#ffffff">Navegador · JavaScript</text>
+<rect x="408" y="172" width="214" height="28" rx="14" fill="#ffffff"/>
+<text x="515" y="192" font-size="15" font-weight="800" fill="#198754" text-anchor="middle">RECONOCE LAS MANOS</text>
+<text x="82" y="252" font-size="30" font-weight="800" fill="#212529">MediaPipe Hands (Google)</text>
+<text x="82" y="292" font-size="21" fill="#495057">Reconoce las manos: encuentra la palma</text>
+<text x="82" y="322" font-size="21" fill="#495057">y devuelve 21 puntos (x, y, z) por mano,</text>
+<text x="82" y="352" font-size="21" fill="#495057">hasta 2 manos, en tiempo real.</text>
+<rect x="518" y="371" width="104" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="570.0" y="391" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">Apache 2.0</text>
+<rect x="670" y="160" width="580" height="255" rx="16" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<path d="M670 176 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#0d6efd"/>
+<text x="692" y="194" font-size="19" font-weight="700" fill="#ffffff">Servidor · Java</text>
+<text x="692" y="252" font-size="30" font-weight="800" fill="#212529">GestureClassifier</text>
+<text x="692" y="292" font-size="21" fill="#495057">21 puntos → qué dedos están extendidos</text>
+<text x="692" y="322" font-size="21" fill="#495057">→ gesto (☝️ ✌️ 🤟 🖖 ✋ ✊ 👍).</text>
+<text x="692" y="352" font-size="21" fill="#495057">Reglas geométricas, sin entrenamiento.</text>
+<rect x="1101" y="371" width="131" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="1166.5" y="391" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">código propio</text>
+<rect x="1280" y="160" width="580" height="255" rx="16" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<path d="M1280 176 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#0d6efd"/>
+<text x="1302" y="194" font-size="19" font-weight="700" fill="#ffffff">Servidor · Java</text>
+<text x="1302" y="252" font-size="30" font-weight="800" fill="#212529">OpenCV 4.9</text>
+<text x="1302" y="292" font-size="21" fill="#495057">Convierte la foto JPEG en una matriz de</text>
+<text x="1302" y="322" font-size="21" fill="#495057">píxeles (Mat) y ejecuta los modelos de</text>
+<text x="1302" y="352" font-size="21" fill="#495057">rostros. Paquete org.openpnp:opencv.</text>
+<rect x="1738" y="371" width="104" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="1790.0" y="391" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">Apache 2.0</text>
+<rect x="60" y="440" width="580" height="255" rx="16" fill="#ffffff" stroke="#6f42c1" stroke-width="2"/>
+<path d="M60 456 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#6f42c1"/>
+<text x="82" y="474" font-size="19" font-weight="700" fill="#ffffff">Modelo dentro de OpenCV</text>
+<rect x="408" y="452" width="214" height="28" rx="14" fill="#ffffff"/>
+<text x="515" y="472" font-size="15" font-weight="800" fill="#6f42c1" text-anchor="middle">DETECTA CARAS</text>
+<text x="82" y="532" font-size="30" font-weight="800" fill="#212529">YuNet</text>
+<text x="82" y="572" font-size="21" fill="#495057">Detecta rostros: recuadro, 5 puntos</text>
+<text x="82" y="602" font-size="21" fill="#495057">(ojos, nariz, boca) y confianza.</text>
+<text x="82" y="632" font-size="21" fill="#495057">Red neuronal preentrenada · 230 KB.</text>
+<rect x="581" y="651" width="41" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="601.5" y="671" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">MIT</text>
+<rect x="670" y="440" width="580" height="255" rx="16" fill="#ffffff" stroke="#6f42c1" stroke-width="2"/>
+<path d="M670 456 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#6f42c1"/>
+<text x="692" y="474" font-size="19" font-weight="700" fill="#ffffff">Modelo dentro de OpenCV</text>
+<rect x="1018" y="452" width="214" height="28" rx="14" fill="#ffffff"/>
+<text x="1125" y="472" font-size="15" font-weight="800" fill="#6f42c1" text-anchor="middle">RECONOCE QUIÉN ES</text>
+<text x="692" y="532" font-size="30" font-weight="800" fill="#212529">SFace</text>
+<text x="692" y="572" font-size="21" fill="#495057">Convierte cada cara en 128 números</text>
+<text x="692" y="602" font-size="21" fill="#495057">(embedding) y los compara con los</text>
+<text x="692" y="632" font-size="21" fill="#495057">usuarios registrados en users.json.</text>
+<rect x="1128" y="651" width="104" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="1180.0" y="671" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">Apache 2.0</text>
+<rect x="1280" y="440" width="580" height="255" rx="16" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<path d="M1280 456 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#0d6efd"/>
+<text x="1302" y="474" font-size="19" font-weight="700" fill="#ffffff">Servidor · Java</text>
+<text x="1302" y="532" font-size="30" font-weight="800" fill="#212529">Spring Boot 3.3</text>
+<text x="1302" y="572" font-size="21" fill="#495057">API REST, regla de autorización,</text>
+<text x="1302" y="602" font-size="21" fill="#495057">estado de los 4 focos, historial</text>
+<text x="1302" y="632" font-size="21" fill="#495057">y registro de usuarios.</text>
+<rect x="1738" y="651" width="104" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="1790.0" y="671" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">Apache 2.0</text>
+<rect x="60" y="720" width="580" height="255" rx="16" fill="#ffffff" stroke="#0d6efd" stroke-width="2"/>
+<path d="M60 736 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#0d6efd"/>
+<text x="82" y="754" font-size="19" font-weight="700" fill="#ffffff">Servidor · Java</text>
+<text x="82" y="812" font-size="30" font-weight="800" fill="#212529">jSerialComm 2.11</text>
+<text x="82" y="852" font-size="21" fill="#495057">Abre el puerto USB (COM3) a 9600 baudios,</text>
+<text x="82" y="882" font-size="21" fill="#495057">envía "RED_ON" y lee la respuesta</text>
+<text x="82" y="912" font-size="21" fill="#495057">"OK:RED_ON".</text>
+<rect x="428" y="931" width="194" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="525.0" y="951" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">Apache 2.0 / LGPL v3</text>
+<rect x="670" y="720" width="580" height="255" rx="16" fill="#ffffff" stroke="#198754" stroke-width="2"/>
+<path d="M670 736 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#198754"/>
+<text x="692" y="754" font-size="19" font-weight="700" fill="#ffffff">Navegador · JavaScript</text>
+<text x="692" y="812" font-size="30" font-weight="800" fill="#212529">Bootstrap 5.3 + Icons</text>
+<text x="692" y="852" font-size="21" fill="#495057">Estilos del dashboard: tarjetas,</text>
+<text x="692" y="882" font-size="21" fill="#495057">botones, alertas, interruptores</text>
+<text x="692" y="912" font-size="21" fill="#495057">e iconos.</text>
+<rect x="1191" y="931" width="41" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="1211.5" y="951" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">MIT</text>
+<rect x="1280" y="720" width="580" height="255" rx="16" fill="#ffffff" stroke="#fd7e14" stroke-width="2"/>
+<path d="M1280 736 a16 16 0 0 1 16 -16 h548 a16 16 0 0 1 16 16 v34 h-580 z" fill="#fd7e14"/>
+<text x="1302" y="754" font-size="19" font-weight="700" fill="#ffffff">Placa Arduino Uno · C++</text>
+<text x="1302" y="812" font-size="30" font-weight="800" fill="#212529">Sketch Arduino</text>
+<text x="1302" y="852" font-size="21" fill="#495057">Lee el texto que llega por Serial y</text>
+<text x="1302" y="882" font-size="21" fill="#495057">enciende o apaga pines con digitalWrite.</text>
+<text x="1302" y="912" font-size="21" fill="#495057">Sin librerías adicionales.</text>
+<rect x="1729" y="931" width="113" height="28" rx="14" fill="#f1f3f5" stroke="#ced4da"/>
+<text x="1785.5" y="951" font-size="15" font-weight="700" fill="#495057" text-anchor="middle">LGPL (core)</text>
+<rect x="60" y="1015" width="24" height="24" rx="5" fill="#198754"/>
+<text x="94" y="1034" font-size="20" fill="#495057">Navegador · JavaScript</text>
+<rect x="364" y="1015" width="24" height="24" rx="5" fill="#0d6efd"/>
+<text x="398" y="1034" font-size="20" fill="#495057">Servidor · Java</text>
+<rect x="598" y="1015" width="24" height="24" rx="5" fill="#6f42c1"/>
+<text x="632" y="1034" font-size="20" fill="#495057">Modelo dentro de OpenCV</text>
+<rect x="912" y="1015" width="24" height="24" rx="5" fill="#fd7e14"/>
+<text x="946" y="1034" font-size="20" fill="#495057">Placa Arduino Uno · C++</text>
+</svg>
